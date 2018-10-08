@@ -1,0 +1,88 @@
+html,body{
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+.app{
+  height:600px;
+}
+nav{
+  margin-top: 80px;
+  height:670px;
+}
+.left{
+  width: 130px;
+  height:100%;
+  float: left;
+  overflow: auto;
+}
+.left::-webkit-scrollbar {width: 0px}
+.left ul{
+  height: 760px;
+}
+.left li {
+ width: 100%;
+ height: 80px;
+ border-bottom: 2px solid #e0e0e0;
+ box-sizing: content-box;
+}
+.active{
+ border-left: 5px solid yellow;
+}
+.left li a{
+   display:block;
+   text-decoration: none;
+   font-size:22px;
+   text-align: center;
+   line-height: 80px;
+   width: 100%;
+   height: 100%;
+   color: black;
+}
+.right{
+  height:100%;
+  color: rgb(139, 137, 137);
+  overflow: hidden;
+  position: relative;
+}
+.right .nav{
+   position: fixed;
+   /* top: 0; */
+   width: 100%;
+   height: 65px;
+   background-color: #fff;
+}
+.right ul {
+  list-style: none;
+}
+.right .nav li{
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  line-height: 65px;
+  float: left;
+  font-size: 20px;
+}
+.right .shop{
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  margin-top: 65px;
+}
+/* //隐藏滚动条 */
+.right .shop::-webkit-scrollbar {width: 0px;}
+.right .shop ul{
+  margin-bottom: 155px;
+}
+.right .shop li{
+  width: 100%;
+  height: 160px;
+}
+.right .shop li a{
+  color:red;
+  text-decoration: none;
+  font-size: 20px;
+}
+.right .shop li a .pice{
+  font-weight: 900;
+}

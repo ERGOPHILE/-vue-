@@ -1,0 +1,35 @@
+<div class="app">
+  <!-- 头部 -->
+  <Header></Header>
+  <nav>
+    <div class="left">
+      <ul>
+        <li v-for="text in list" :key="text.id">
+          <a href="#" @click="shopList(text.id)">{{text.name}}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="right">
+      <div class="nav">
+        <ul>
+          <li>全部分类</li>
+          <li>综合排序</li>
+        </ul>
+      </div>
+      <div class="shop">
+        <ul>
+          <li v-for="v in productsList" :key="v.id">
+            <router-link to="list">
+              <img :src="v.img" width="55" height="55" alt="">
+              <p>{{v.name}}</p>
+              <p>{{v.specifics}}</p>
+              <p><span class="pice">￥{{v.pice}}</span><s>￥{{v.partner_price}}</s></p>
+            </router-link>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- 底部 -->
+  <Footer></Footer>
+</div>

@@ -7,37 +7,49 @@ html,body{
   height:600px;
 }
 nav{
-  margin-top: 80px;
-  height:670px;
+  width: 100%;
+  top:110px;
+  bottom: 100px;
+  position: absolute;
 }
 .left{
-  width: 130px;
+  width: 185px;
   height:100%;
   float: left;
   overflow: auto;
 }
 .left::-webkit-scrollbar {width: 0px}
-.left ul{
-  height: 760px;
-}
 .left li {
  width: 100%;
- height: 80px;
+ height:100px;
  border-bottom: 2px solid #e0e0e0;
  box-sizing: content-box;
 }
 .active{
- border-left: 5px solid yellow;
+    border-left: 4px solid #ffd600;
 }
 .left li a{
    display:block;
    text-decoration: none;
-   font-size:22px;
+   font-size:25px;
    text-align: center;
-   line-height: 80px;
+   line-height: 100px;
    width: 100%;
    height: 100%;
    color: black;
+  position: relative;
+}
+.menuIcon::before{
+  top:0;
+  content: "";
+  display: block;
+  width: 90px;
+  height: 90px;
+  background: url('../../assets/img/new.jpg');
+  background-size: 70px 70px;
+  background-repeat: no-repeat;
+  position: absolute;
+  right:0;
 }
 .right{
   height:100%;
@@ -47,9 +59,9 @@ nav{
 }
 .right .nav{
    position: fixed;
-   /* top: 0; */
    width: 100%;
    height: 65px;
+   font-size: 25px;
    background-color: #fff;
 }
 .right ul {
@@ -61,28 +73,65 @@ nav{
   text-align: center;
   line-height: 65px;
   float: left;
-  font-size: 20px;
 }
 .right .shop{
   width: 100%;
   height: 100%;
   overflow: auto;
   margin-top: 65px;
+  cursor: pointer;
 }
 /* //隐藏滚动条 */
 .right .shop::-webkit-scrollbar {width: 0px;}
-.right .shop ul{
-  margin-bottom: 155px;
-}
 .right .shop li{
   width: 100%;
-  height: 160px;
+  height: 150px;
+  border-top: 1px solid #ccc;
+  padding:35px;
+  font-size:25px;
+  display: flex;
 }
-.right .shop li a{
-  color:red;
-  text-decoration: none;
-  font-size: 20px;
+.right .shop li  .shop_list{
+  width: 100%;
+  height: 100%;
 }
-.right .shop li a .pice{
+.right .shop li img{
+  float: left;
+  margin-right: 20px;
+}
+.right .shop li .shop_name{
+  color: black;
+  font-size:30px;
+  margin-bottom: 20px;
+}
+.right .shop li  .price{
   font-weight: 900;
+  color:red;
 }
+.right .shop li .add{
+  width: 200px;
+  height:100px;
+  display: flex;
+  margin-right: 40px;
+  position: relative;
+ padding-top:100px;
+}
+.right .shop li .add span{
+  display: block;
+}
+.right .shop li .add .btn{
+  color:#ff4300;
+  width: 45px;
+  height: 45px;
+  font-size: 30px;
+  line-height:45px;
+  text-align:center;
+  border-radius:50%;
+  font-weight: 900;
+  border:2px solid #ff4300;
+}
+.right .shop li .add  .num{
+  margin: 10px 20px;
+}
+
+

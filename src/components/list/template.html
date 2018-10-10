@@ -4,8 +4,8 @@
   <nav>
     <div class="left">
       <ul>
-        <li v-for="text in list" :key="text.id">
-          <a href="#" @click="shopList(text.id)">{{text.name}}</a>
+        <li v-for="(text,i) in list" :key="text.id" @click="shopList(i,text.id)">
+          <a href="#" :class="{menuIcon:!text.icon,active: index === i}">{{text.name}}</a>
         </li>
       </ul>
     </div>
@@ -18,13 +18,18 @@
       </div>
       <div class="shop">
         <ul>
-          <li v-for="v in productsList" :key="v.id">
-            <router-link to="list">
+          <li v-for="v in productsList" :key="v.id" @click="getproductId(v.product_id)">
+            <div class="shop_list">
               <img :src="v.img" width="55" height="55" alt="">
-              <p>{{v.name}}</p>
+              <p class="shop_name">{{v.name}}</p>
               <p>{{v.specifics}}</p>
-              <p><span class="pice">￥{{v.pice}}</span><s>￥{{v.partner_price}}</s></p>
-            </router-link>
+              <p><span class="price">￥{{v.price}}</span><s>￥{{v.partner_price}}</s></p>
+            </div>
+            <div class="add">
+              <span class="btn" @click.stop="Reduction(v.count,v.id)" v-show="v.count">-</span>
+              <span class="num" v-show="v.count">{{v.count}}</span>
+              <span class="btn" @click.stop="add(v.count,v.id)">+</span>
+            </div>
           </li>
         </ul>
       </div>

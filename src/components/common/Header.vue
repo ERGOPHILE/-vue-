@@ -11,16 +11,16 @@ export default {};
 <style>
 .header {
     width: 100%;
-    height: auto;
+    height: 110px;
     left: 0;
     top: 0;
     position: fixed;
 }
 .header h1 {
     background-color: #ffd600;
-    height: 80px;
-    line-height: 80px;
-    font-size: 26px;
+    height: 100%;
+    line-height: 110px;
+    font-size: 35px;
     text-align: center;
     color: white;
 }

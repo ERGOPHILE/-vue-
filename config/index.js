@@ -11,12 +11,16 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
+      // 代理规则
       '/api': {
-        target: 'http://m.beequick.cn/data/home?_r=0.10487448529559651&cart_pids=ids&location=121.5721941391567%2C31.21168025925351',//请求的第三方接口
-        changeOrogon: true,//在本地会创建一个虚拟服务端，然后发送请求的数据，并同时接收请求的数据，这样服务端和服务端进行数据的交互就不会有跨域问题
-        pathRewrite: {  // 路径重写，
-          '^/api': '/api'  // 替换target中的请求地址，也就是说以后你在请求http://api.jisuapi.com/XXXXX这个地址的时候直接写成/api即可。
-        }
+        // 代理的目标服务器地址
+        target: 'http://m.beequick.cn/data/',
+        // https请求需要该设置
+        secure: false,
+        // 必须设置该项
+        changeOrigin: true,
+        // 将 '/api' 替换成 ''
+        pathRewrite: { "^/api": "" }
       }
     },
 
